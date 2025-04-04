@@ -1,5 +1,5 @@
 {
-  "namespace": "nuts.dev.kafkamodule.model",
+  "namespace": "model",
   "type": "record",
   "name": "StreamAvroModel",
   "fields": [

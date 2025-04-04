@@ -12,5 +12,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Import({KafkaBrokerProperties.class, KafkaProducerProperties.class})
+@EnableKafkaBroker
 public @interface EnableKafkaProducer {
 }

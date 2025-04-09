@@ -3,12 +3,9 @@ package nuts.dev.kafkamodule.autoconfiguration;
 import lombok.RequiredArgsConstructor;
 import model.StreamAvroModel;
 import nuts.dev.kafkamodule.producer.KafkaProducer;
-import nuts.dev.kafkamodule.producer.impl.DefaultStreamAvroKafkaProducer;
 import nuts.dev.kafkamodule.properties.KafkaBrokerProperties;
 import nuts.dev.kafkamodule.properties.KafkaProducerProperties;
-import org.apache.avro.specific.SpecificRecordBase;
 import org.apache.kafka.clients.producer.ProducerConfig;
-import org.checkerframework.checker.units.qual.K;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -22,7 +19,8 @@ import java.util.Map;
 @Configuration
 @RequiredArgsConstructor
 @Import({KafkaAdminClientAutoConfiguration.class, KafkaProducerProperties.class, KafkaProducer.class})
-public class KafkaProducerAutoConfiguration {
+public class KafkaProducerConfiguration {
+
     private final KafkaBrokerProperties kafkaBrokerProperties;
     private final KafkaProducerProperties kafkaProducerProperties;
 

@@ -11,4 +11,7 @@ kafka-connection-retry:
   max-interval-ms: 10000
   multiplier: 2.0
   max-attempts: 3
-  sleep-time-ms: 2000
+  sleep-time-ms:
+
+kafka-consumer-config:
+  auto-offset-reset:

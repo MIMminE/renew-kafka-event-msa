@@ -1,8 +1,9 @@
-package nuts.dev.kafkamodule.autoconfiguration;
+package nuts.dev.kafkamodule.configuration;
 
 import lombok.RequiredArgsConstructor;
 import model.StreamAvroModel;
 import nuts.dev.kafkamodule.producer.KafkaProducer;
+import nuts.dev.kafkamodule.producer.impl.DefaultStreamAvroKafkaProducer;
 import nuts.dev.kafkamodule.properties.KafkaBrokerProperties;
 import nuts.dev.kafkamodule.properties.KafkaProducerProperties;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -18,8 +19,8 @@ import java.util.Map;
 
 @Configuration
 @RequiredArgsConstructor
-@Import({KafkaAdminClientAutoConfiguration.class, KafkaProducerProperties.class, KafkaProducer.class})
-public class KafkaProducerConfiguration {
+@Import({KafkaBrokerProperties.class, KafkaProducerProperties.class})
+public class EnableKafkaProducerConfiguration {
 
     private final KafkaBrokerProperties kafkaBrokerProperties;
     private final KafkaProducerProperties kafkaProducerProperties;
@@ -45,6 +46,11 @@ public class KafkaProducerConfiguration {
     @Bean
     public KafkaTemplate<Long, StreamAvroModel> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
+    }
+
+    @Bean
+    public KafkaProducer<Long, StreamAvroModel> kafkaProducer() {
+        return new DefaultStreamAvroKafkaProducer(kafkaTemplate());
     }
 
 }

@@ -7,20 +7,17 @@ import nuts.dev.kafkamodule.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
-import org.springframework.stereotype.Component;
 
 import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 @RequiredArgsConstructor
-@Component
 public class DefaultStreamAvroKafkaProducer implements KafkaProducer<Long, StreamAvroModel> {
 
     private final KafkaTemplate<Long, StreamAvroModel> kafkaTemplate;
 
     @Override
     public void send(String topicName, Long key, StreamAvroModel message) {
-        ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
         log.info("Sending message='{}' to topic='{}'", message, topicName);
         CompletableFuture<SendResult<Long, StreamAvroModel>> kafkaResultFuture = kafkaTemplate.send(topicName, key, message);
         addCallback(topicName, message, kafkaResultFuture);

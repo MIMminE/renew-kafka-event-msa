@@ -1,4 +1,4 @@
-package nuts.dev.kafkamodule.autoconfiguration;
+package nuts.dev.kafkamodule.configuration;
 
 
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ import java.util.HashMap;
 @Configuration
 @RequiredArgsConstructor
 @Import({KafkaBrokerProperties.class, KafkaConsumerProperties.class})
-public class KafkaConsumerConfiguration {
+public class EnableKafkaConsumerConfiguration {
 
     private final KafkaBrokerProperties brokerProperties;
     private final KafkaConsumerProperties consumerProperties;

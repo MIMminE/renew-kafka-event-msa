@@ -1,4 +1,4 @@
-package nuts.dev.kafkamodule.autoconfiguration;
+package nuts.dev.kafkamodule.configuration;
 
 import lombok.RequiredArgsConstructor;
 import nuts.dev.kafkamodule.admin.KafkaAdminClient;
@@ -19,7 +19,7 @@ import java.util.Map;
 @Configuration
 @RequiredArgsConstructor
 @Import({KafkaBrokerProperties.class, KafkaAdminClient.class, RetryProperties.class})
-public class KafkaAdminClientAutoConfiguration {
+public class EnableKafkaAdminClientConfiguration {
     private final KafkaBrokerProperties brokerProperties;
     private final RetryProperties retryProperties;
 

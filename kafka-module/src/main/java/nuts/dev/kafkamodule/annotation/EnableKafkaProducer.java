@@ -1,6 +1,6 @@
 package nuts.dev.kafkamodule.annotation;
 
-import nuts.dev.kafkamodule.properties.KafkaProducerProperties;
+import nuts.dev.kafkamodule.configuration.EnableKafkaProducerConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;
@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Import(KafkaProducerProperties.class)
+@Import(EnableKafkaProducerConfiguration.class)
 @EnableKafkaBroker
 public @interface EnableKafkaProducer {
 }

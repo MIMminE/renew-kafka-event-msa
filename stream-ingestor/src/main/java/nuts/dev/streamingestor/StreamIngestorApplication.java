@@ -7,6 +7,7 @@ import nuts.dev.kafkamodule.annotation.EnableKafkaBroker;
 import nuts.dev.kafkamodule.annotation.EnableKafkaProducer;
 import nuts.dev.kafkamodule.producer.KafkaProducer;
 import nuts.dev.kafkamodule.properties.KafkaBrokerProperties;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

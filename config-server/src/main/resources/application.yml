@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///D:/kafka-event-msa/config-server-repository
+          clone-on-start: false
+          default-label: master
+          force-pull: false
+          search-paths: '{application}'
+      fail-fast: true
+
+logging:
+  level:
+    root: info
+    org.springframework.cloud.config: debug

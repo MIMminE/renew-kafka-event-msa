@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/kafka-module/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/kafka-to-elastic-service/pom.xml" />
+        <option value="$PROJECT_DIR$/elastic-module/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
